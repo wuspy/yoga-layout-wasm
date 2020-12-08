@@ -45,6 +45,13 @@ EMSCRIPTEN_BINDINGS(Node) {
     .field("height", &YGSize::height)
     ;
 
+  enum_<YGUnit>("Unit")
+    .value("UNDEFINED", YGUnit::YGUnitUndefined)
+    .value("POINT", YGUnit::YGUnitPoint)
+    .value("PERCENT", YGUnit::YGUnitPercent)
+    .value("AUTO", YGUnit::YGUnitAuto)
+    ;
+
   value_object<YGValue>("Value")
     .field("value", &YGValue::value)
     .field("unit", &YGValue::unit)
