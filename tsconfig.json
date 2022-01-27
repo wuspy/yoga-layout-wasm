@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "module": "es2015",
+      "moduleResolution": "node",
+      "target": "es6",
+      "strict": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "noImplicitAny": true,
+      "forceConsistentCasingInFileNames": true,
+      "declaration": true,
+    },
+    "exclude": ["node_modules"]
+  }

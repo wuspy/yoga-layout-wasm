@@ -1,38 +1,16 @@
-import sucrase from '@rollup/plugin-sucrase';
-import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
+import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
 
 export default [
   {
-    input: 'src/yoga-git/entry-common.js',
+    input: 'src/index.ts',
     output: [
       {
-        file: 'build/entry.js',
-        format: 'esm',
-      },
-    ],
-    plugins: [
-      sucrase({
-        transforms: ['flow'],
-      }),
-      commonjs(),
-      copy({
-        targets: [
-          { src: 'build/yoga.wasm', dest: 'dist/' },
-          { src: 'build/yoga.wasm.js', dest: 'dist/' },
-        ],
-      }),
-    ],
-  },
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        file: pkg.main,
+        file: 'dist/index.js',
         format: 'cjs',
+        exports: 'default',
       },
       {
         file: 'dist/index.umd.js',
@@ -41,20 +19,27 @@ export default [
       },
     ],
     plugins: [
+      typescript({ useTsconfigDeclarationDir: false }),
       babel({
         babelrc: false,
         babelHelpers: 'bundled',
         presets: ['@babel/preset-env'],
       }),
       terser(),
+      copy({
+        targets: [
+          { src: 'build/yoga.wasm', dest: 'dist/' },
+        ],
+      }),
     ],
   },
   {
-    input: 'src/asm.js',
+    input: 'src/asm.ts',
     output: [
       {
-        file: 'asm.js',
+        file: 'dist/asm.js',
         format: 'cjs',
+        exports: 'default',
       },
       {
         file: 'dist/asm.umd.js',
@@ -63,6 +48,7 @@ export default [
       },
     ],
     plugins: [
+      typescript({ useTsconfigDeclarationDir: false }),
       babel({
         babelrc: false,
         babelHelpers: 'bundled',
