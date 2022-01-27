@@ -10,7 +10,7 @@
     "build:all": "rm -rf dist build && make && rollup -c rollup.config.js",
     "example:node": "node ./examples/node/index.js",
     "example:node:asm": "node ./examples/node/asm.js",
-    "example:html": "open http://127.0.0.1:8080/examples/html/ && http-server"
+    "example:html": "http-server -o examples/html"
   },
   "repository": {
     "type": "git",
