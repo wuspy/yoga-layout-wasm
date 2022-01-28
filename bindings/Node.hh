@@ -210,6 +210,10 @@ public:
   void setIsReferenceBaseline(bool isReferenceBaseline);
   bool isReferenceBaseline();
 
+public:
+  void setHasNewLayout(bool hasNewLayout);
+  bool getHasNewLayout(void);
+
   YGNodeRef m_node;
 
   std::unique_ptr<MeasureCallback> m_measureFunc;

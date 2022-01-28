@@ -66,6 +66,7 @@ export declare class Node {
     getFlexGrow(): number;
     getFlexShrink(): number;
     getFlexWrap(): FlexWrap;
+    getHasNewLayout(): boolean;
     getHeight(): Value;
     getJustifyContent(): JustifyContent;
     getMargin(edge: Edge): Value;
@@ -98,6 +99,7 @@ export declare class Node {
     setFlexGrow(flexGrow: number): void;
     setFlexShrink(flexShrink: number): void;
     setFlexWrap(flexWrap: FlexWrap): void;
+    setHasNewLayout(hasNewLayout: boolean): void;
     setHeight(height: Value): void;
     setHeightAuto(): void;
     setHeightPercent(height: number): void;

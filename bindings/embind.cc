@@ -181,6 +181,8 @@ EMSCRIPTEN_BINDINGS(Node) {
     .function("getComputedHeight", &Node::getComputedHeight)
 
     .function("getComputedLayout", &Node::getComputedLayout)
+    .function("getHasNewLayout", &Node::getHasNewLayout)
+    .function("setHasNewLayout", &Node::setHasNewLayout)
 
     .function("getComputedMargin", &Node::getComputedMargin)
     .function("getComputedBorder", &Node::getComputedBorder)

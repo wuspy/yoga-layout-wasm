@@ -441,3 +441,11 @@ double Node::getComputedBorder(int edge) const {
 double Node::getComputedPadding(int edge) const {
   return YGNodeLayoutGetPadding(m_node, static_cast<YGEdge>(edge));
 }
+
+void Node::setHasNewLayout(bool hasNewLayout) {
+  YGNodeSetHasNewLayout(m_node, hasNewLayout);
+}
+
+bool Node::getHasNewLayout() {
+  return YGNodeGetHasNewLayout(m_node);
+}
