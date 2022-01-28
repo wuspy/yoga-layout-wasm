@@ -81,7 +81,7 @@ export declare class Node {
     setHeightAuto(): void;
     setHeightPercent(height: number): void;
     setJustifyContent(justifyContent: JustifyContent): void;
-    setMargin(edge: Edge, margin: number): void;
+    setMargin(edge: Edge, margin: Value): void;
     setMarginAuto(edge: Edge): void;
     setMarginPercent(edge: Edge, margin: number): void;
     setMaxHeight(maxHeight: Value): void;
