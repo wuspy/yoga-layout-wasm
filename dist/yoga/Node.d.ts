@@ -1,11 +1,17 @@
 import { Align, Direction, Display, Edge, FlexWrap, FlexDirection, JustifyContent, Overflow, PositionType, MeasureMode } from "./enums";
 import { Config } from "./Config";
-import { Value } from "./Value";
-import { Layout } from "./Layout";
-export declare type ParsableValue = number | string | Value | undefined;
+export declare type Value = number | string | undefined;
+export interface Layout {
+    left: number;
+    right: number;
+    top: number;
+    bottom: number;
+    width: number;
+    height: number;
+}
 export declare type MeasureFunc = (width: number, widthMeasureMode: MeasureMode, height: number, heightMeasureMode: MeasureMode) => {
-    width?: number;
-    height?: number;
+    width: number;
+    height: number;
 };
 export declare class Node {
     static create(config?: Config): Node;
@@ -34,7 +40,7 @@ export declare class Node {
     getComputedTop(): number;
     getComputedWidth(): number;
     getDisplay(): Display;
-    getFlexBasis(): number;
+    getFlexBasis(): Value;
     getFlexDirection(): FlexDirection;
     getFlexGrow(): number;
     getFlexShrink(): number;
@@ -62,38 +68,40 @@ export declare class Node {
     setAlignSelf(alignSelf: Align): void;
     setAspectRatio(aspectRatio: number): void;
     setBorder(edge: Edge, borderWidth: number): void;
+    setDirtiedFunc(dirtiedFunc: (() => void) | null | undefined): void;
     setDisplay(display: Display): void;
     setFlex(flex: number): void;
-    setFlexBasis(flexBasis: ParsableValue): void;
+    setFlexBasis(flexBasis: Value): void;
     setFlexBasisPercent(flexBasis: number): void;
     setFlexDirection(flexDirection: FlexDirection): void;
     setFlexGrow(flexGrow: number): void;
     setFlexShrink(flexShrink: number): void;
     setFlexWrap(flexWrap: FlexWrap): void;
-    setHeight(height: ParsableValue): void;
+    setHeight(height: Value): void;
     setHeightAuto(): void;
     setHeightPercent(height: number): void;
     setJustifyContent(justifyContent: JustifyContent): void;
     setMargin(edge: Edge, margin: number): void;
     setMarginAuto(edge: Edge): void;
     setMarginPercent(edge: Edge, margin: number): void;
-    setMaxHeight(maxHeight: ParsableValue): void;
+    setMaxHeight(maxHeight: Value): void;
     setMaxHeightPercent(maxHeight: number): void;
-    setMaxWidth(maxWidth: ParsableValue): void;
+    setMaxWidth(maxWidth: Value): void;
     setMaxWidthPercent(maxWidth: number): void;
     setMeasureFunc(measureFunc: MeasureFunc | null | undefined): void;
-    setMinHeight(minHeight: ParsableValue): void;
+    setMinHeight(minHeight: Value): void;
     setMinHeightPercent(minHeight: number): void;
-    setMinWidth(minWidth: ParsableValue): void;
+    setMinWidth(minWidth: Value): void;
     setMinWidthPercent(minWidth: number): void;
     setOverflow(overflow: Overflow): void;
-    setPadding(edge: Edge, padding: ParsableValue): void;
+    setPadding(edge: Edge, padding: Value): void;
     setPaddingPercent(edge: Edge, padding: number): void;
-    setPosition(edge: Edge, position: ParsableValue): void;
+    setPosition(edge: Edge, position: Value): void;
     setPositionPercent(edge: Edge, position: number): void;
     setPositionType(positionType: PositionType): void;
-    setWidth(width: ParsableValue): void;
+    setWidth(width: Value): void;
     setWidthAuto(): void;
     setWidthPercent(width: number): void;
+    unsetDirtiedFunc(): void;
     unsetMeasureFunc(): void;
 }

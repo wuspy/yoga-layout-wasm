@@ -5,10 +5,16 @@ interface MeasureCallback {
         measure: yoga.MeasureFunc;
     }): any;
 }
+interface DirtiedCallback {
+    implement(arg: {
+        dirtied: () => void;
+    }): any;
+}
 export interface YogaInit {
     Node: typeof yoga.Node;
     Config: typeof yoga.Config;
     MeasureCallback: MeasureCallback;
+    DirtiedCallback: DirtiedCallback;
 }
-declare const _default: ({ Config, Node, MeasureCallback }: YogaInit) => Yoga;
+declare const _default: (lib: YogaInit) => Yoga;
 export default _default;
