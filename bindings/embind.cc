@@ -15,7 +15,8 @@ EMSCRIPTEN_BINDINGS(Config) {
     .function("setExperimentalFeatureEnabled", &Config::setExperimentalFeatureEnabled)
     .function("setPointScaleFactor", &Config::setPointScaleFactor)
     .function("isExperimentalFeatureEnabled", &Config::isExperimentalFeatureEnabled)
-
+    .function("setUseWebDefaults", &Config::setUseWebDefaults)
+    .function("getUseWebDefaults", &Config::getUseWebDefaults)
   ;
 }
 
@@ -77,6 +78,7 @@ EMSCRIPTEN_BINDINGS(Node) {
     .function("setFlexDirection", &Node::setFlexDirection)
     .function("setFlexWrap", &Node::setFlexWrap)
     .function("setJustifyContent", &Node::setJustifyContent)
+    .function("setDirection", &Node::setDirection)
 
     .function("setMargin", &Node::setMargin)
     .function("setMarginPercent", &Node::setMarginPercent)
@@ -87,6 +89,7 @@ EMSCRIPTEN_BINDINGS(Node) {
 
     .function("setFlex", &Node::setFlex)
     .function("setFlexBasis", &Node::setFlexBasis)
+    .function("setFlexBasisAuto", &Node::setFlexBasisAuto)
     .function("setFlexBasisPercent", &Node::setFlexBasisPercent)
     .function("setFlexGrow", &Node::setFlexGrow)
     .function("setFlexShrink", &Node::setFlexShrink)
@@ -124,6 +127,7 @@ EMSCRIPTEN_BINDINGS(Node) {
     .function("getFlexDirection", &Node::getFlexDirection)
     .function("getFlexWrap", &Node::getFlexWrap)
     .function("getJustifyContent", &Node::getJustifyContent)
+    .function("getDirection", &Node::getDirection)
 
     .function("getMargin", &Node::getMargin)
 

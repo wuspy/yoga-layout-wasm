@@ -60,6 +60,7 @@ export declare class Node {
     getComputedRight(): number;
     getComputedTop(): number;
     getComputedWidth(): number;
+    getDirection(): Direction;
     getDisplay(): Display;
     getFlexBasis(): Value;
     getFlexDirection(): FlexDirection;
@@ -90,10 +91,12 @@ export declare class Node {
     setAlignSelf(alignSelf: Align): void;
     setAspectRatio(aspectRatio: number): void;
     setBorder(edge: Edge, borderWidth: number): void;
+    setDirection(direction: Direction): void;
     setDirtiedFunc(dirtiedFunc: (() => void) | null | undefined): void;
     setDisplay(display: Display): void;
     setFlex(flex: number): void;
     setFlexBasis(flexBasis: Value): void;
+    setFlexBasisAuto(): void;
     setFlexBasisPercent(flexBasis: number): void;
     setFlexDirection(flexDirection: FlexDirection): void;
     setFlexGrow(flexGrow: number): void;

@@ -25,9 +25,11 @@ public: // Prevent accidental copy
 public: // Setters
   void setExperimentalFeatureEnabled(int feature, bool enabled);
   void setPointScaleFactor(float pixelsInPoint);
+  void setUseWebDefaults(bool useWebDefaults);
 
 public: // Getters
   bool isExperimentalFeatureEnabled(int feature) const;
+  bool getUseWebDefaults() const;
 
 private:
   YGConfigRef m_config;

@@ -78,6 +78,7 @@ public: // Style setters
   void setFlexDirection(int flexDirection);
   void setFlexWrap(int flexWrap);
   void setJustifyContent(int justifyContent);
+  void setDirection(int direction);
 
   void setMargin(int edge, double margin);
   void setMarginPercent(int edge, double margin);
@@ -127,6 +128,7 @@ public: // Style getters
   int getFlexDirection(void) const;
   int getFlexWrap(void) const;
   int getJustifyContent(void) const;
+  int getDirection(void) const;
 
   YGValue getMargin(int edge) const;
 
@@ -212,7 +214,7 @@ public:
 
 public:
   void setHasNewLayout(bool hasNewLayout);
-  bool getHasNewLayout(void);
+  bool getHasNewLayout(void) const;
 
   YGNodeRef m_node;
 

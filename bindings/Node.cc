@@ -116,6 +116,10 @@ void Node::setOverflow(int overflow) {
   YGNodeStyleSetOverflow(m_node, static_cast<YGOverflow>(overflow));
 }
 
+void Node::setDirection(int direction) {
+  YGNodeStyleSetDirection(m_node, static_cast<YGDirection>(direction));
+}
+
 void Node::setDisplay(int display) {
   YGNodeStyleSetDisplay(m_node, static_cast<YGDisplay>(display));
 }
@@ -126,6 +130,10 @@ void Node::setFlex(double flex) {
 
 void Node::setFlexBasis(double flexBasis) {
   YGNodeStyleSetFlexBasis(m_node, flexBasis);
+}
+
+void Node::setFlexBasisAuto() {
+  YGNodeStyleSetFlexBasisAuto(m_node);
 }
 
 void Node::setFlexBasisPercent(double flexBasis) {
@@ -254,6 +262,10 @@ YGValue Node::getMargin(int edge) const {
 
 int Node::getOverflow(void) const {
   return YGNodeStyleGetOverflow(m_node);
+}
+
+int Node::getDirection(void) const {
+  return YGNodeStyleGetDirection(m_node);
 }
 
 int Node::getDisplay(void) const {
@@ -446,6 +458,6 @@ void Node::setHasNewLayout(bool hasNewLayout) {
   YGNodeSetHasNewLayout(m_node, hasNewLayout);
 }
 
-bool Node::getHasNewLayout() {
+bool Node::getHasNewLayout() const {
   return YGNodeGetHasNewLayout(m_node);
 }

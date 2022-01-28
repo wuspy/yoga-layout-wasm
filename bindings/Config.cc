@@ -29,3 +29,11 @@ bool Config::isExperimentalFeatureEnabled(int feature) const {
   return YGConfigIsExperimentalFeatureEnabled(
       m_config, static_cast<YGExperimentalFeature>(feature));
 }
+
+void Config::setUseWebDefaults(bool useWebDefaults) {
+  YGConfigSetUseWebDefaults(m_config, useWebDefaults);
+}
+
+bool Config::getUseWebDefaults() const {
+  return YGConfigGetUseWebDefaults(m_config);
+}

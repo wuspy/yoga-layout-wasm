@@ -6,4 +6,6 @@ export declare class Config {
     isExperimentalFeatureEnabled(feature: ExperimentalFeature): boolean;
     setExperimentalFeatureEnabled(feature: ExperimentalFeature, enabled: boolean): void;
     setPointScaleFactor(factor: number): void;
+    setUseWebDefaults(useWebDefaults: boolean): void;
+    getUseWebDefaults(): boolean;
 }
